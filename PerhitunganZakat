@@ -1,0 +1,29 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.perhitnganzakat;
+
+/**
+ *
+ * @author Maulana Ali
+ */
+import java.util.Scanner;
+
+public class PerhitunganZakat {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Integer nisab = 85;
+        System.out.println("Masukkan Jumlah Harta (gram)");
+        double totalHarta = input.nextDouble();
+        
+        if (totalHarta > nisab) {
+            double zakat = totalHarta * 0.025;
+            System.out.println("Harta telah mencapai nisab!");
+            System.out.println("Jumlah zakat: " + zakat);
+        } else {
+            System.out.println("Harta belum mencapai nisab");
+        }
+    }
+}
