@@ -1,0 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.sistemparkir;
+
+/**
+ *
+ * @author Maulana Ali
+ */
+import java.util.Scanner;
+
+public class SistemParkir {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan Jenis Kendaraan (mobil / motor): ");
+        String jeniskendaraan = input.next();
+        System.out.print("Berapa lama anda akan parkir? (jam): ");
+        double lamaparkir = input.nextDouble();
+        double tarifawal = 0;
+        double tarifperjam = 0;
+
+        if (jeniskendaraan.equalsIgnoreCase("mobil")) {
+            tarifawal = 5000;
+            tarifperjam = 2000;
+        } else if (jeniskendaraan.equalsIgnoreCase("motor")) {
+            tarifawal = 2000;
+            tarifperjam = 1000;
+        } else {
+            System.out.println("Jenis kendaraan tidak dikenal.");
+            return;
+        }
+        double tariftambahan = lamaparkir * tarifperjam;
+        double totaltarif = tarifawal + tariftambahan;
+        System.out.println("Tarif Awal: " + tarifawal);
+        System.out.println("Tarif Tambahan: " + tariftambahan);
+        System.out.println("Jumlah Tarif Anda: " + totaltarif);
+    }
+}
