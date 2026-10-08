@@ -1,0 +1,11 @@
+public class Perulangan {
+    public static void main(String[] args) {
+        int i = 1;
+        while (i <= 5) {
+            System.out.println("Angka: " + i);
+        }
+    }
+}
+
+// Warning: Tidak ada perintah update i++. Jika ini dipaksa melakukan run, maka
+// program akan terus-menerus mencetak angka 1 tanpa henti
