@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.permainantebakangka;
+
+/**
+ *
+ * @author Maulana Ali
+ */
+import java.util.Scanner;
+
+public class PermainanTebakAngka {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        Integer rahasia = (int) (Math.random() * 100) + 1;
+        Integer percobaan = 0;
+        Integer tebakan = 0;
+
+        while (tebakan != rahasia && percobaan < 7) {
+            percobaan++;
+            
+            System.out.println("Kesempatan ke- " + percobaan + " / 7");
+            System.out.print("Masukkan tebakanmu (1-100): ");
+            tebakan = input.nextInt();
+
+            if (tebakan < rahasia) {
+                System.out.println("Angkamu Terlalu Kecil!");
+            } else if (tebakan > rahasia) {
+                System.out.println("Angkamu Terlalu Besar!");
+            } else {
+                System.out.println("Benar!");
+            }
+        }
+        
+        if (tebakan != rahasia) {
+            System.out.println("Kesempatan habis! Angkanya adalah: " + rahasia);
+            System.out.println("Coba lagi di lain kesempatan!");
+        } else {
+            System.out.println("Selamat! Tebakanmu Benar");
+        }
+    }
+}
