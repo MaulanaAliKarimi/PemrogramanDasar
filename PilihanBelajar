@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.pilihan;
+
+/**
+ *
+ * @author Maulana Ali
+ */
+import java.util.Scanner;
+
+public class Pilihan {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Hello World!");
+        int x = 16;
+        int y = 8;
+        System.out.println("masukkan pilihan anda dari 1, 2 dan 3");
+        int pilihan = input.nextInt();
+        
+        if (pilihan == 1) {
+            System.out.println("Andi sedang belajar penjumlahan " + (x + y));
+        } else if (pilihan == 2) {
+            System.out.println("Andi sedang belajar pengurangan " + (x - y));
+        } else if (pilihan == 3) {
+            System.out.println("Andi sedang belajar perkalian " + (x * y));
+        } else {
+            System.out.println("Maaf tidak ada pilihan lain " + (x / y));
+        }
+    }
+}
