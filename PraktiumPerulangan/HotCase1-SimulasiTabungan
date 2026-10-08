@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class SimulasiTabungan {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Masukkan jumlah bulan: ");
+        int jumlahBulan = input.nextInt();
+        
+        int nominal = 100000;
+        int total = 0;
+        int bulanCapai1Juta = 0;
+        
+        System.out.println("\n--- Rincian Tabungan ---");
+        for (int i = 1; i <= jumlahBulan; i++) {
+            total += nominal;
+            System.out.println("Bulan " + i + ": Rp" + nominal + " | Total: Rp" + total);
+            nominal += 50000;
+        }
+        
+        // Mencari bulan pertama kali mencapai Rp1.000.000 dengan break
+        int tempTotal = 0;
+        int tempNominal = 100000;
+        for (int i = 1; i <= jumlahBulan; i++) {
+            tempTotal += tempNominal;
+            if (tempTotal >= 1000000) {
+                bulanCapai1Juta = i;
+                break; // Menghentikan pencarian jika sudah mencapai 1 juta
+            }
+            tempNominal += 50000;
+        }
+        
+        System.out.println("\n--- Ringkasan ---");
+        System.out.println("Total Tabungan: Rp" + total);
+        if (bulanCapai1Juta > 0) {
+            System.out.println("Total tabungan pertama kali mencapai Rp1.000.000 pada bulan ke-" + bulanCapai1Juta);
+        } else {
+            System.out.println("Total tabungan belum mencapai Rp1.000.000 dalam " + jumlahBulan + " bulan.");
+        }
+    }
+}
