@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class PerulanganDoWhile {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int jumlahlolos = 0;
+        int jumlahtidaklolos = 0;
+        double totalNilai = 0;
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + i + ": ");
+            int nilai = input.nextInt();
+            String status;
+            totalNilai += nilai;
+
+            if (nilai >= 75) {
+                status = "Lulus";
+                System.out.println("Status: " + status);
+                jumlahlolos++;
+            } else {
+                status = "Tidak Lulus";
+                System.out.println("Status: " + status);
+                jumlahtidaklolos++;
+            }
+
+            double rataRata = totalNilai / i;
+            System.out.println("Rata-rata nilai: " + rataRata);
+        }
+
+        System.out.println("a. Jumlah mahasiswa lulus : " + jumlahlolos);
+        System.out.println("b. Jumlah mahasiswa tidak lulus : " + jumlahtidaklolos);
+    }
+}
