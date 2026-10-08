@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Tugas2Faktorial {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan angka: ");
+        int n = input.nextInt();
+        
+        long faktorial = 1;
+        System.out.print(n + "! = ");
+        for (int i = n; i >= 1; i--) {
+            faktorial *= i;
+            System.out.print(i + (i > 1 ? " × " : ""));
+        }
+        System.out.println("\n" + n + "! = " + faktorial);
+    }
+}
