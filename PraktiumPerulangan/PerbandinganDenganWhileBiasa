@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class PerulanganDoWhile {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan angka (0 untuk berhenti): ");
+        int angka = input.nextInt();
+        while (angka != 0) {
+            System.out.println("Anda memasukkan: " + angka);
+            System.out.print("Masukkan angka (0 untuk berhenti): ");
+            angka = input.nextInt();
+        }
+    }
+}
+
+// Jika kondisi false, while akan langsung menyelesaikan program tanpa mencetak
+// “Anda memasukkan: 0”. Sedangkan do-while tetap mencetak “Anda
+// memasukkan: 0” meskipun kondisinya false
